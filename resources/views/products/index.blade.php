@@ -1,7 +1,11 @@
 @extends('layout.products')
 @section('title', 'لیست محصولات')
 @section('content')
+
 <div class="container">
+    <x-alert/>
+    <x-alert/>
+    <x-alert/>
     <div class="header">
         <h1>📦 لیست آیتم‌ها</h1>
         <p>مدیریت آیتم‌های خود را اینجا انجام دهید</p>

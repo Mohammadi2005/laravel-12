@@ -1,6 +1,7 @@
 @extends('layout.products')
 @section('title', 'ساخت محصول')
 @section('content')
+
 <div class="container">
     <div class="header">
         <h1>➕ ایجاد آیتم جدید</h1>
