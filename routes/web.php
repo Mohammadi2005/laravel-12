@@ -61,3 +61,25 @@ Route::prefix('posts')->name('posts')->group(function () {
         return view('posts.show', ['postId' => $postId]);
     })->name('.show');
 });
+
+Route::get('/foreach', function () {
+    $array = [
+        [
+            'id' => 1,
+            'name' => 'John',
+        ],
+        [
+            'id' => 2,
+            'name' => 'ali',
+        ],
+        [
+            'id' => 3,
+            'name' => 'amir',
+        ],
+        [
+            'id' => 4,
+            'name' => 'reza',
+        ],
+    ];
+    return view('array', compact('array'));
+});
