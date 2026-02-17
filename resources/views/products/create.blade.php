@@ -12,8 +12,10 @@
         <form action="#" method="POST" enctype="multipart/form-data">
             <!-- عنوان -->
             <div class="form-group">
-                <label class="required">عنوان آیتم</label>
-                <input type="text" class="form-control" placeholder="مثال: گوشی موبایل سامسونگ" required>
+
+                <x-form.input label="نام محصول" placeholder='لطفا نام محصول را وارد کنید'/>
+                <x-form.input label="نام خانوادگی محصول" placeholder='لطفا نام خانوادگی محصول را وارد کنید'/>
+
                 <div class="help-text">حداکثر ۱۰۰ کاراکتر</div>
             </div>
 
