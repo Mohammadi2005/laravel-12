@@ -3,9 +3,10 @@
 @section('content')
 
 <div class="container">
-    <x-alert/>
-    <x-alert/>
-    <x-alert/>
+    <x-alert message="آپلود شده"/>
+    <x-alert message="در حال آپلود ..."/>
+    <x-alert message="آپلود نا موفق"/>
+
     <div class="header">
         <h1>📦 لیست آیتم‌ها</h1>
         <p>مدیریت آیتم‌های خود را اینجا انجام دهید</p>
