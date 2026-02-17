@@ -15,15 +15,23 @@
             <div class="form-group">
 
                 <x-form.input label="نام محصول" name="fname" placeholder='لطفا نام محصول را وارد کنید'/>
+                @error('fname')
+                <span class="text-amber-500">{{$message}}</span>
+                @enderror
                 <x-form.input label="نام خانوادگی محصول" name="lname" placeholder='لطفا نام خانوادگی محصول را وارد کنید'/>
-
+                @error('lname')
+                <span class="text-red-600 font-bold">{{$message}}</span>
+                @enderror
                 <div class="help-text">حداکثر ۱۰۰ کاراکتر</div>
             </div>
 
             <!-- توضیحات -->
             <div class="form-group">
                 <label class="required">توضیحات</label>
-                <textarea class="form-control" name="desc" placeholder="توضیحات کامل آیتم را وارد کنید..." required></textarea>
+                <textarea class="form-control" name="desc" placeholder="توضیحات کامل آیتم را وارد کنید..." ></textarea>
+                @error('desc')
+                <span class="text-amber-500">{{$message}}</span>
+                @enderror
             </div>
 
             <!-- قیمت و موجودی (دو ستونه) -->
@@ -31,20 +39,20 @@
                 <div class="form-group">
                     <label class="required">قیمت</label>
                     <div class="price-input">
-                        <input type="number" name="price" class="form-control" placeholder="۰" required>
+                        <input type="number" name="price" class="form-control" placeholder="۰" >
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label class="required">موجودی</label>
-                    <input type="number" class="form-control" placeholder="تعداد موجودی" required>
+                    <input type="number" class="form-control" placeholder="تعداد موجودی" >
                 </div>
             </div>
 
             <!-- دسته‌بندی -->
             <div class="form-group">
                 <label class="required">دسته‌بندی</label>
-                <select class="form-control" required>
+                <select class="form-control" >
                     <option value="">انتخاب کنید...</option>
                     <option value="electronics">الکترونیک</option>
                     <option value="clothing">پوشاک</option>

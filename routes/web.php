@@ -94,8 +94,13 @@ Route::prefix('products')->name('products')->group(function () {
         return view('products.create');
     })->name('.create');
 
-    Route::post('/create', function () {
-        return dd(request()->all());
+    Route::post('/create', function (\Illuminate\Http\Request $request) {
+        $request->validate([
+            'fname' => ['required', 'string', 'max:8', 'min:5'],
+            'lname' => ['required', 'string', 'max:255', 'min:5'],
+            'desc' => ['required', 'string', 'max:255', 'min:5'],
+        ]);
+        dd(request()->all());
 //        return view('products.create');
     })->name('.create');
 });
