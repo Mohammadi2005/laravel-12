@@ -9,12 +9,13 @@
     </div>
 
     <div class="content">
-        <form action="#" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('products.create') }}" method="POST" enctype="multipart/form-data">
             <!-- عنوان -->
+            @csrf
             <div class="form-group">
 
-                <x-form.input label="نام محصول" placeholder='لطفا نام محصول را وارد کنید'/>
-                <x-form.input label="نام خانوادگی محصول" placeholder='لطفا نام خانوادگی محصول را وارد کنید'/>
+                <x-form.input label="نام محصول" name="fname" placeholder='لطفا نام محصول را وارد کنید'/>
+                <x-form.input label="نام خانوادگی محصول" name="lname" placeholder='لطفا نام خانوادگی محصول را وارد کنید'/>
 
                 <div class="help-text">حداکثر ۱۰۰ کاراکتر</div>
             </div>
@@ -22,7 +23,7 @@
             <!-- توضیحات -->
             <div class="form-group">
                 <label class="required">توضیحات</label>
-                <textarea class="form-control" placeholder="توضیحات کامل آیتم را وارد کنید..." required></textarea>
+                <textarea class="form-control" name="desc" placeholder="توضیحات کامل آیتم را وارد کنید..." required></textarea>
             </div>
 
             <!-- قیمت و موجودی (دو ستونه) -->
@@ -30,7 +31,7 @@
                 <div class="form-group">
                     <label class="required">قیمت</label>
                     <div class="price-input">
-                        <input type="number" class="form-control" placeholder="۰" required>
+                        <input type="number" name="price" class="form-control" placeholder="۰" required>
                     </div>
                 </div>
 

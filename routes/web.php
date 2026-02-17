@@ -93,4 +93,9 @@ Route::prefix('products')->name('products')->group(function () {
     Route::get('/create', function () {
         return view('products.create');
     })->name('.create');
+
+    Route::post('/create', function () {
+        return dd(request()->all());
+//        return view('products.create');
+    })->name('.create');
 });

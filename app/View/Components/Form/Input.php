@@ -13,7 +13,7 @@ class Input extends Component
      */
     public function __construct(
         public string $label = "عنوان",
-//        public string $type = "text",
+        public string $name = "name",
         public string $placeholder = "متن راهنما",
     )
     {
