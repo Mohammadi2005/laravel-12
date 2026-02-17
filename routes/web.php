@@ -83,3 +83,14 @@ Route::get('/foreach', function () {
     ];
     return view('array', compact('array'));
 });
+
+Route::prefix('products')->name('products')->group(function () {
+
+    Route::get('/index', function () {
+        return view('products.index');
+    });
+
+    Route::get('/create', function () {
+        return view('products.create');
+    })->name('.create');
+});
