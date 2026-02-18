@@ -16,9 +16,14 @@
         <h1>{{\Illuminate\Support\Facades\Auth::user()->name}}</h1>
         <p>للاگین شده</p>
 
-        <a href='{{route("logout")}}'>
-            logout
-        </a>
+
+        <form action="{{route("logout")}}" method="post">
+            @csrf
+            @method("POST")
+            <button type="submit">
+                logout
+            </button>
+        </form>
 
     @else
         <p>لاگین نشده</p>

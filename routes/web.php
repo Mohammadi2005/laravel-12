@@ -60,7 +60,10 @@ Route::prefix('posts')->name('posts')->group(function () {
 
     // route name
     Route::get('{postId}', function ($postId) {
-        return view('posts.show', ['postId' => $postId]);
+        if(\Illuminate\Support\Facades\Gate::allows('show', $postId)) {
+            return view('posts.show', ['postId' => $postId]);
+        }
+        return abort(403);
     })->name('.show');
 });
 
@@ -132,7 +135,7 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    Route::get('logout', [
+    Route::post('logout', [
         LoginController::class,
         'logout',
     ])->name('logout');
