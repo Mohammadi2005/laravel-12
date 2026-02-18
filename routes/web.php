@@ -96,11 +96,11 @@ Route::prefix('products')->name('products')->group(function () {
 
     Route::post('/create', function (\Illuminate\Http\Request $request) {
         $request->validate([
-            'fname' => ['required', 'string', 'max:8', 'min:5'],
+            'fname' => ['required', 'string' , new \App\Rules\ProductRule()],
             'lname' => ['required', 'string', 'max:255', 'min:5'],
             'desc' => ['required', 'string', 'max:255', 'min:5'],
         ]);
         dd(request()->all());
-//        return view('products.create');
+
     })->name('.create');
 });
