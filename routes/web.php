@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Auth\RegisterController;
+use App\Http\Controllers\Auth\LoginController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -104,3 +106,35 @@ Route::prefix('products')->name('products')->group(function () {
 
     })->name('.create');
 });
+
+
+
+Route::middleware('guest')->group(function () {
+    Route::get('register', [
+        RegisterController::class,
+        'show',
+    ])->name('register');
+
+    Route::post('register', [
+        RegisterController::class,
+        'register',
+    ])->name('register');
+
+    Route::get('login', [
+        LoginController::class,
+        'show',
+    ])->name('login');
+
+    Route::post('login', [
+        LoginController::class,
+        'login',
+    ])->name('login');
+});
+
+Route::middleware('auth')->group(function () {
+    Route::get('logout', [
+        LoginController::class,
+        'logout',
+    ])->name('logout');
+});
+
