@@ -14,11 +14,11 @@
             @csrf
             <div class="form-group">
 
-                <x-form.input label="نام محصول" name="fname" placeholder='لطفا نام محصول را وارد کنید'/>
+                <x-form.input label="نام محصول" name="fname" placeholder='لطفا نام محصول را وارد کنید' value="{{old('fname')}}"/>
                 @error('fname')
                 <span class="text-amber-500">{{$message}}</span>
                 @enderror
-                <x-form.input label="نام خانوادگی محصول" name="lname" placeholder='لطفا نام خانوادگی محصول را وارد کنید'/>
+                <x-form.input label="نام خانوادگی محصول" name="lname" placeholder='لطفا نام خانوادگی محصول را وارد کنید' value="{{old('lname')}} "/>
                 @error('lname')
                 <span class="text-red-600 font-bold">{{$message}}</span>
                 @enderror
@@ -28,7 +28,7 @@
             <!-- توضیحات -->
             <div class="form-group">
                 <label class="required">توضیحات</label>
-                <textarea class="form-control" name="desc" placeholder="توضیحات کامل آیتم را وارد کنید..." ></textarea>
+                <textarea class="form-control" name="desc" placeholder="توضیحات کامل آیتم را وارد کنید..." >{{ old('desc') }}</textarea>
                 @error('desc')
                 <span class="text-amber-500">{{$message}}</span>
                 @enderror

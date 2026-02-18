@@ -15,6 +15,7 @@ class Input extends Component
         public string $label = "عنوان",
         public string $name = "name",
         public string $placeholder = "متن راهنما",
+
     )
     {
         //
